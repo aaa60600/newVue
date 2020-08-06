@@ -20,10 +20,9 @@ export default {
 <style scoped>
 .home{
   background: url('../assets/welcome.jpg') no-repeat center center fixed; 
-     background-size: cover;
-     min-height: 700px;
-     padding-top: 10%;
-     position: relative;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
 }
 .btnBlocks{
  position: absolute;
@@ -42,7 +41,6 @@ export default {
   font-size: 30px;
   margin-left : 30px;
   cursor: pointer;
-
 }
 
 </style>
