@@ -24,20 +24,24 @@
 // 整段script都需要使用
 export default {
   name: 'NewAccount',
-    data() {
-       return {
-         accountDataInit:{
-           newaccount:'',
-           newpassword:'',
-           newemail:'',
-         },
-         accountData:{}
-       }
-     },
-     created(){
-       this.resetInput();
-     },
-     methods:{
+  //宣告這個檔案裡面所使用到的變數
+  data() {
+    return {
+      accountDataInit:{
+        newaccount:'',
+        newpassword:'',
+        newemail:'',
+      },
+      accountData:{}
+    }
+  },
+  // 生命週期
+  created(){
+    this.resetInput();
+  },
+  // 方法宣告
+  methods:{
+    // 重製輸入框方法
     resetInput(){
       this.accountData = JSON.parse(JSON.stringify(this.accountDataInit));
     }
