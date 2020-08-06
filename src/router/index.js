@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Login from '../views/Login.vue'
+
 //步驟1. 建立頁面且引用
 import pageExample from '../views/pageExample.vue'
 Vue.use(VueRouter)
@@ -18,6 +20,11 @@ Vue.use(VueRouter)
   //   name: 'pageExample',
   //   component: pageExample
   // },
+  {
+    path: '/login',
+    name: 'login',
+    component: login
+  },
   {
     path: '/pageExample',
     name: 'pageExample',

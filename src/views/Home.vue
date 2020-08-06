@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <!--  -->
-    <img alt="Vue logo" src="../assets/logo.png">
-    <el-button @click="$router.push('/about')">去about</el-button>
-    <el-button @click="$router.push('/pageExample')">去pageExample</el-button>
+    <img alt="Vue logo" src="../assets/welcome.jpg">
+    <el-button @click="$router.push('/login')">登入</el-button>
+    <el-button @click="$router.push('/pageExample')">註冊</el-button>
   </div>
 </template>
 
