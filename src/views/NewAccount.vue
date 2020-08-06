@@ -48,8 +48,10 @@ export default {
 .NewAccount{
   background: url('../assets/account.jpg'); 
   background-size: cover;
-  min-height: 700px;
-  padding-top: 10%;
+  height: 100vh;
   position: relative;
+}
+.newaccount{
+padding-top: 20%;
 }
 </style>

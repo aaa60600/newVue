@@ -58,14 +58,13 @@ export default {
 .Login{
   background: url('../assets/login.jpg') no-repeat center center fixed; 
   background-size: cover;
-  min-height: 700px;
-  padding-top: 10%;
+  height: 100vh;
   position: relative;
 }
 .logBlocks{
  position: absolute;
- bottom: 250px;
- right: 300px;
+ bottom: 26%;
+ right: 20%;
 }
 .Login .log{
   background-color: burlywood;
@@ -78,7 +77,8 @@ export default {
 }
 .acclogin{
   position: absolute;
-  right: 400px;
+  right: 28%;
+  top: 20%;
   width: 120px;
   height: 80px;
   font-size: 30px;
