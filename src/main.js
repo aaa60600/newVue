@@ -1,25 +1,22 @@
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-//*********以上為vue預設套件Vue核心、路由(頁面設置)、全域變數設置************
-
-//*********引用套件js************
-import ElementUI from 'element-ui';
-
-//**********引用樣式CSS***********
-import 'element-ui/lib/theme-chalk/index.css';
-import './assets/css/main.css'
-
-//**********讓vue使用套件***********
-Vue.use(ElementUI);
+//import Vue from 'vue/dist/vue.esm.js'
+import App from './App'
+import router from './router'//引入路由配置
+import ElementUI from 'element-ui'
 
 
-// 以下請勿更動
+//建立和掛載根例項，通過router 配置引數注入路由，從而讓整個應用都有路由功能
+
+Vue.config.productionTip = false
+Vue.use(ElementUI)
+
 Vue.config.productionTip = false
 
+/* eslint-disable no-new */
 new Vue({
+  el: '#app',
   router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+  renfer: h =>(App)
+})

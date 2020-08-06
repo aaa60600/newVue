@@ -1,7 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-        <el-button @click="$router.push('/')">回首頁</el-button>
+    <h1>Game Map Homepage</h1>
     
   </div>
 </template>
