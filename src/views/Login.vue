@@ -22,7 +22,7 @@
 
 export default {
   name: 'Login',
-  data() {
+    data() {
        return {
          loginInit:{
            account:'',
