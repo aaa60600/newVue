@@ -4,7 +4,7 @@
 
     <div class="btnBlocks">
     <button class="btn" @click="$router.push('/login')">登入</button>
-    <button class="btn" @click="$router.push('/pageExample')">註冊</button>
+    <button class="btn" @click="$router.push('/NewAccount')">註冊</button>
     </div>
   </div>
 
@@ -23,7 +23,7 @@ export default {
      background-size: cover;
      min-height: 700px;
      padding-top: 10%;
-     position: relarive;
+     position: relative;
 }
 .btnBlocks{
  position: absolute;
@@ -41,7 +41,6 @@ export default {
   height: 80px;
   font-size: 30px;
   margin-left : 30px;
-  -webkit-transition: 0.4s;
   cursor: pointer;
 
 }

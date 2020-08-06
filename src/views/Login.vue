@@ -60,7 +60,7 @@ export default {
   background-size: cover;
   min-height: 700px;
   padding-top: 10%;
-  position: relarive;
+  position: relative;
 }
 .logBlocks{
  position: absolute;
@@ -77,6 +77,8 @@ export default {
   margin-left : 30px;
 }
 .acclogin{
+  position: absolute;
+  right: 400px;
   width: 120px;
   height: 80px;
   font-size: 30px;
