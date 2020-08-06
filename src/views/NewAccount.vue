@@ -1,6 +1,6 @@
 <template>
+<!-- 這裡是靜態畫面 -->
   <div class="NewAccount">
-
    <div class="newaccount">
      <label for="newaccount">建立帳號：</label>
      <input name="newaccount" type="text" v-model="accountData.newaccount">
@@ -19,7 +19,9 @@
    </div>
 </template>
 <script>
-
+// 如果要含資料輸入或輸出 就是需要變數
+// html上面的 {{...}} v-xx="..." 或者 :class="..." :style="..." 也是屬於動態資料
+// 整段script都需要使用
 export default {
   name: 'NewAccount',
     data() {
@@ -41,7 +43,6 @@ export default {
     }
   }
 }
-</script>
 </script>
 <style scoped>
 .NewAccount{
