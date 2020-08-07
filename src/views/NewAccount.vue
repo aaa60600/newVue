@@ -6,7 +6,7 @@
 			<form action="#" method="post" class="formBox">
 				<div class="box xiao-username-box">
 					<span class="xiao-require">*</span>
-					<label for="username">會員帳號</label>
+					<label for="username">建立帳號</label>
 					<div class="xiao-input">
 						<input type="text" id="username" name="username" placeholder="請输入帳號" />
 					</div>
@@ -14,23 +14,15 @@
 
 				<div class="box xiao-userPassword-box">
 					<span class="xiao-require">*</span>
-					<label for="userPassword">會員密碼</label>
+					<label for="userPassword">設定密碼</label>
 					<div class="xiao-input">
 						<input type="password" id="userPassword" name="userPassword" placeholder="請输入密碼" />
 					</div>
 				</div>
 
-				<div class="box xiao-userRePassword-box">
-				<span class="xiao-require">*</span>
-						<label for="userRePassword">確認密碼</label>
-					<div class="xiao-input">
-						<input type="password" id="userRePassword" name="userRePassword" placeholder="請重複輸入密碼" />
-					</div>
-				</div>
-
 				<div class="box xiao-userEmail-box">
 					<span class="xiao-require">*</span>
-					<label for="userEmail">會員信箱</label>
+					<label for="userEmail">驗證信箱</label>
 					<div class="xiao-input">
 						<input type="text" id="userEmail" name="userEmail" placeholder="請输入您的信箱帳號，如：123@gmail.com" />
 					</div>

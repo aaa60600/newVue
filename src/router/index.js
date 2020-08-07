@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import NewAccount from '../views/NewAccount.vue'
-import resetinput from '../views/resetInput.vue'
+import resetInput from '../views/resetInput.vue'
 import success from '../views/success.vue'
 
 //步驟1. 建立頁面且引用
