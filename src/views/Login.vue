@@ -1,6 +1,6 @@
 <template>
   <div class="Login">
-
+  <meta charset="UTF-8">
    <div class="acclogin">
      <label for="account">帳號：</label>
      <input name="account" type="text" v-model="loginData.account">
@@ -8,12 +8,10 @@
      <input name="account" type="text" v-model="loginData.password">
    </div>
     <div class="logBlocks">
-      <button class="log" @click="resetInput">忘記密碼</button>
       <button class="log" @click="login">登入</button>
+      <button class="log" @click="resetInput">忘記密碼</button>
    </div>
    <div v-if="loginData.account != ''&& loginData.password !=''">
-     <p>帳號 ： {{loginData.account}}</p>
-     <p>密碼 ： {{loginData.password}}</p>
    </div>
    </div>
 </template>
@@ -41,11 +39,10 @@ export default {
         alert('請輸入帳號!');
         return;
       }
-      if(this.loginData.password == ''){
+      else if(this.loginData.password == ''){
         alert('請輸入密碼!');
         return;
       }
-      
       alert('登入');
     },
     resetInput(){
@@ -77,12 +74,12 @@ export default {
 }
 .acclogin{
   position: absolute;
-  right: 28%;
-  top: 20%;
+  right: 30%;
+  top: 30%;
   width: 120px;
   height: 80px;
   font-size: 30px;
-  margin-left : 30px;
+  margin-left : 40px;
 
 }
 </style>

@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import NewAccount from '../views/NewAccount.vue'
+import resetinput from '../views/resetInput.vue'
+import success from '../views/success.vue'
 
 //步驟1. 建立頁面且引用
 import pageExample from '../views/pageExample.vue'
@@ -27,15 +29,21 @@ Vue.use(VueRouter)
     component: () => import('../views/Login.vue')
   },
   {
-    path: '/NewAccount',
+    path: '/NewAccount', //加入會員
     name: 'NewAccount',
     component: () => import('../views/NewAccount.vue')
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
-  }
+    path: '/success',// 註冊成功
+    name: 'success',
+    component: () => import('../views/success.vue')
+  },
+  {
+    path: '/resetInput',// 忘記密碼
+    name: 'resetInput',
+    component: () => import('../views/resetInput.vue')
+  },
+  
 ]
 
 const router = new VueRouter({
