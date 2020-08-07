@@ -1,10 +1,10 @@
 <template>
 <div class="xiao-container">			
 			<div class="formBox">
-					<img src="../assets/account.jpg">
+					<img src="../assets/account.jpg" style="width:auto;"><br>
 			</div>
 			<form action="#" method="post" class="formBox">
-				<div class="box xiao-username-box">
+				<div class="box">
 					<span class="xiao-require">*</span>
 					<label for="username">建立帳號</label>
 					<div class="xiao-input">
@@ -12,7 +12,7 @@
 					</div>
 				</div>
 
-				<div class="box xiao-userPassword-box">
+				<div class="box">
 					<span class="xiao-require">*</span>
 					<label for="userPassword">設定密碼</label>
 					<div class="xiao-input">
@@ -20,7 +20,7 @@
 					</div>
 				</div>
 
-				<div class="box xiao-userEmail-box">
+				<div class="box">
 					<span class="xiao-require">*</span>
 					<label for="userEmail">驗證信箱</label>
 					<div class="xiao-input">
@@ -28,13 +28,11 @@
 					</div>
 				</div>
 
-				<div class="box xiao-submit-box">
-					<input id = "xiao-submit-button" type="submit" value="加入會員">
+				<div class="box-goLogin">
+					<button class="btn" @click="$router.push('/success')">加入會員</button>
+    				<button class="btn" @click="$router.push('/home')">返回首頁</button>
 				</div>
 
-				<div class="box xiao-goLogin-box">
-					<a href="#" style="text-decoration: none;">已有帳號？去登入</a>
-				</div>
 			</form>
 		</div>
 </template>
@@ -70,17 +68,28 @@ export default {
 }
 </script>
 <style scoped>
-
 .formBox{
 	width:50%;
 	height:100px;
 	display: inline-block;
 }
-.xiao-input{
-	margin:15px;
-
+.box{
+	margin:25px;
 }
-
-
+.formBox input{
+  border-radius: 15px;
+  height: 30px;
+  width: 320px;
+  font-size:15px;
+}
+.NewAccount .btn{
+background-color: burlywood;
+  border-radius: 12px;
+  color: aliceblue;
+  width: 140px;
+  height: 90px;
+  font-size: 30px;
+  margin-left : 30px;
+} 
 
 </style>

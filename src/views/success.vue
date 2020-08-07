@@ -3,7 +3,6 @@
 <template>
   <div class="success">
   <meta http-equiv="refresh" content="5; url=http://localhost:8080/">
-        <el-button @click="$router.push('/')">返回首頁登入</el-button>
   </div>
 </template>
 

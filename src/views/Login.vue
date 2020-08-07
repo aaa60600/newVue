@@ -64,16 +64,16 @@ export default {
 .logBlocks{
  position: absolute;
  bottom: 26%;
- right: 20%;
+ right: 15%;
 }
 .Login .log{
   background-color: burlywood;
   border-radius: 12px;
   color: aliceblue;
-  width: 140px;
+  width: 130px;
   height: 90px;
   font-size: 30px;
-  margin-left : 30px;
+  margin-left : 40px;
 }
 .acclogin{
   position: absolute;
@@ -83,5 +83,12 @@ export default {
   height: 80px;
   font-size: 30px;
   margin-left : 40px;
+}
+.acclogin input{
+  margin:25px;
+  border-radius: 15px;
+  height: 30px;
+  width: 320px;
+  font-size:20px;
 }
 </style>

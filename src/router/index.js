@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import NewAccount from '../views/NewAccount.vue'
-import resetInput from '../views/resetInput.vue'
+import resetinput from '../views/resetInput.vue'
 import success from '../views/success.vue'
 
 //步驟1. 建立頁面且引用
@@ -42,6 +42,11 @@ Vue.use(VueRouter)
     path: '/resetInput',// 忘記密碼
     name: 'resetInput',
     component: () => import('../views/resetInput.vue')
+  },
+  {
+    path: '/pageExample',// 返回首頁
+    name: 'pageExample',
+    component: () => import('../views/pageExample.vue')
   },
   
 ]

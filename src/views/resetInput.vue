@@ -1,5 +1,8 @@
 <template>
-<div class="forget-pass">			
+<div class="forget-pass">	
+	<div class="formBox">
+					<img src="../assets/forget.jpg">
+			</div>		
 			<form action="#" method="post" class="forgetBox">
 				<div class="box xiao-username-box">
 					<span class="xiao-require">*</span>
@@ -26,10 +29,10 @@
 </template>
 
 <style scoped>
-.fogpasswoord{
-  background: url('../assets/forget.jpg') no-repeat center center fixed; 
-  background-size: cover;
-  height: 100vh;
-  position: relative;
+.forget-pass{
+    width:50%;
+	height:100px;
+	display: inline-block;
+	max-width: 100px;
 }
 </style>
