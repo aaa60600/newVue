@@ -9,7 +9,7 @@
    </div>
     <div class="logBlocks">
       <button class="log" @click="login">登入</button>
-      <button class="log" @click="resetInput">忘記密碼</button>
+      <button class="log" @click="forgetPassword">忘記密碼</button>
    </div>
    <div v-if="loginData.account != ''&& loginData.password !=''">
    </div>
@@ -47,13 +47,16 @@ export default {
     },
     resetInput(){
       this.loginData = JSON.parse(JSON.stringify(this.loginInit));
+    },
+    forgetPassword(){
+      this.$router.push('/resetInput')
     }
   }
 }
 </script>
 <style scoped>
 .Login{
-  background: url('../assets/login.jpg') no-repeat center center fixed; 
+  background: url('../assets/login.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   position: relative;
