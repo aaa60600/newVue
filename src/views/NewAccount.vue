@@ -4,17 +4,15 @@
    <div class="newaccount">
      <label for="newaccount">建立帳號：</label>
      <input name="newaccount" type="text" v-model="accountData.newaccount">
-     <label for="newpassword">密碼：</label>
+     <label for="newpassword">設定密碼：</label>
      <input name="newpassword" type="text" v-model="accountData.newpassword">
-     <label for="newemail">信箱：</label>
+     <label for="newemail">驗證信箱：</label>
      <input name="newemail" type="text" v-model="accountData.newemail">
    </div>
-    <div class="logaccount">
+    <div class="LogAccount">
       <button class="logaccount" @click="resetInput">加入會員</button>
    </div>
    <div v-if="accountData.account != ''&& accountData.password !=''">
-     <p>帳號 ： {{accountData.account}}</p>
-     <p>密碼 ： {{accountData.password}}</p>
    </div>
    </div>
 </template>
@@ -52,4 +50,5 @@ export default {
   padding-top: 10%;
   position: relative;
 }
+
 </style>
