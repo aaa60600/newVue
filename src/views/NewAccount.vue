@@ -1,52 +1,50 @@
 <template>
-<div class="xiao-container">
-		<div class="xiao-register-box">
-			<div class="xiao-title-box">
-				<span>加入會員</span>
+<div class="xiao-container">			
+			<div class="formBox">
+					<img src="../assets/account.jpg">
 			</div>
-			<form action="#" method="post">
-				<div class="xiao-username-box">
+			<form action="#" method="post" class="formBox">
+				<div class="box xiao-username-box">
 					<span class="xiao-require">*</span>
 					<label for="username">會員帳號</label>
-					<div class="xiao-username-input">
-						<input type="text" id="username" name="username" placeholder="请输入帳號 長度:6-12个字符" />
+					<div class="xiao-input">
+						<input type="text" id="username" name="username" placeholder="請输入帳號" />
 					</div>
 				</div>
- 
-				<div class="xiao-userPassword-box">
+
+				<div class="box xiao-userPassword-box">
 					<span class="xiao-require">*</span>
 					<label for="userPassword">會員密碼</label>
-					<div class="xiao-userPassword-input">
-						<input type="password" id="userPassword" name="userPassword" placeholder="请输入密碼 長度:6-12个字符" />
+					<div class="xiao-input">
+						<input type="password" id="userPassword" name="userPassword" placeholder="請输入密碼" />
 					</div>
 				</div>
- 
-				<div class="xiao-userRePassword-box">
+
+				<div class="box xiao-userRePassword-box">
 				<span class="xiao-require">*</span>
 						<label for="userRePassword">確認密碼</label>
-					<div class="xiao-userRePassword-input">
-						<input type="password" id="userRePassword" name="userRePassword" placeholder="请重複輸入密碼" />
+					<div class="xiao-input">
+						<input type="password" id="userRePassword" name="userRePassword" placeholder="請重複輸入密碼" />
 					</div>
 				</div>
- 
-				<div class="xiao-userEmail-box">
+
+				<div class="box xiao-userEmail-box">
 					<span class="xiao-require">*</span>
 					<label for="userEmail">會員信箱</label>
-					<div class="xiao-userEmail-input">
-						<input type="text" id="userEmail" name="userEmail" placeholder="请输入您的信箱帳號，如：123@gmail.com" />
+					<div class="xiao-input">
+						<input type="text" id="userEmail" name="userEmail" placeholder="請输入您的信箱帳號，如：123@gmail.com" />
 					</div>
 				</div>
-				
-				<div class="xiao-submit-box">
+
+				<div class="box xiao-submit-box">
 					<input id = "xiao-submit-button" type="submit" value="加入會員">
 				</div>
-				
-				<div class="xiao-goLogin-box">
+
+				<div class="box xiao-goLogin-box">
 					<a href="#" style="text-decoration: none;">已有帳號？去登入</a>
 				</div>
 			</form>
 		</div>
-	</div>
 </template>
 
 <script>
@@ -80,5 +78,17 @@ export default {
 }
 </script>
 <style scoped>
+
+.formBox{
+	width:50%;
+	height:100px;
+	display: inline-block;
+}
+.xiao-input{
+	margin:15px;
+
+}
+
+
 
 </style>
