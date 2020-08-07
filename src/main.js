@@ -12,11 +12,8 @@ import ElementUI from 'element-ui'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 
-Vue.config.productionTip = false
 
-/* eslint-disable no-new */
 new Vue({
-  el: '#app',
   router,
-  renfer: h =>(App)
-})
+  render: h => h(App),
+}).$mount('#app');
