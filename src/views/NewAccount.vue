@@ -62,7 +62,16 @@ export default {
   methods:{
     // 重製輸入框方法
     resetInput(){
-      this.accountData = JSON.parse(JSON.stringify(this.accountDataInit));
+	  this.accountData = JSON.parse(JSON.stringify(this.accountDataInit));
+	//  ini_set("display_errors","On");
+    //  $account = $_POST['mail'];
+    //  $password = $_POST['password'];
+    //  $member = $_POST['name'];
+    //  require_once "../../method/connect.php";
+    //  $insert = $connect -> prepare("INSERT INTO member(account,password,member,phone,addr)
+    //    VALUES(?,?,?,?,?)");
+    //  $insert -> execute(array($account,$password,$member,$phone,$addr));
+    // header("location:../?sig_suc=註冊成功");
     }
   }
 }
