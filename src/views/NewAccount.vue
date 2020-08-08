@@ -1,7 +1,8 @@
 <template>
-<div class="xiao-container">			
-			<div class="formBox">
-					<img src="../assets/account.jpg" style="width:auto;"><br>
+  <div class="xiao-container">			
+    <div>
+      <div class="formBox">
+        <img src="../assets/account.jpg" style="width:100%;">
 			</div>
 			<form action="#" method="post" class="formBox">
 				<div class="box">
@@ -34,7 +35,8 @@
 				</div>
 
 			</form>
-		</div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -78,9 +80,8 @@ export default {
 </script>
 <style scoped>
 .formBox{
-	width:50%;
-	height:100px;
-	display: inline-block;
+    display: inline-block;
+    vertical-align: middle;
 }
 .box{
 	margin:25px;
@@ -100,5 +101,9 @@ background-color: burlywood;
   font-size: 30px;
   margin-left : 30px;
 } 
-
+.xiao-container{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
 </style>
