@@ -27,7 +27,7 @@ export default {
   name: 'Resetpass',
   data() {
       return {
-        resetInput:{
+        initResetInput:{
           account:'',
           password:'',
           newPassword:'',
@@ -40,7 +40,7 @@ export default {
   },
   methods:{
     resetInput(){
-      this.inputData = JSON.parse(JSON.stringify(this.resetInput));
+      this.inputData = JSON.parse(JSON.stringify(this.initResetInput));
     },
     ResetpassHandle(){
       this.$router.push('/')
