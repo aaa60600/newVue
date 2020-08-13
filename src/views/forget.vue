@@ -1,6 +1,6 @@
 <template>
 <div class="forget-pass">
-		<div class="formBox">
+		<div class="forgetBox">
 				<img class="image" src="../assets/forget.jpg">
 		</div>
 		<form action="javascript:void(0);" method="post" class="forgetBox">
@@ -55,6 +55,10 @@ export default {
 .forget-pass{
     position: relative;
 }
+/* .forgetBox{
+    display: inline-block;
+    vertical-align: middle;
+} */
 
 .image{
   width: 80%;

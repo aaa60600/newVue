@@ -46,8 +46,8 @@ Vue.use(VueRouter)
     component: () => import('../views/success.vue')
   },
   {
-    path: '/forget',// 忘記密碼
-    name: 'forget',
+    path: '/Forget',// 忘記密碼
+    name: 'Forget',
     component: () => import('../views/forget.vue')
   },
   {
