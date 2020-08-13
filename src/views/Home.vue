@@ -8,7 +8,6 @@
       <button class="btn" @click="$router.push('/NewAccount')">註冊</button>
     </div>
   </div>
-
 </template>
 
 <script>

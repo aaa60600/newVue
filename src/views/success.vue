@@ -1,10 +1,11 @@
 <template>
 <!-- // 註冊成功 -->
-  <div class="success">
+  <div>
     <div class="showTime">{{showSecond}}秒，回到首頁，請重新登入!</div>
-    	<img class="image" src="../assets/success.jpg">
+    <div class="success">
+        <img class="image" src="../assets/success.jpg">
+    </div>
   </div>
-  
 </template>
 <script>
 export default {
@@ -47,13 +48,20 @@ export default {
 
 <style scoped>
 .success{
-  /* background: url('../assets/success.jpg') no-repeat center center fixed; */
-  background-size: cover;
-  height: 100vh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }
 .showTime{
-  font-size:30px;
-  color:orangered;
+  font-size: 30px;  
+  color: orangered;
+  background-color: dodgerblue;
+  position: absolute;
+  z-index: 1;
+  margin: 0px -50px -15px 0px;
+  transform: translate3d(37vw, 25vh, 0px);
 }
 </style>

@@ -1,18 +1,20 @@
 <template>
-  <div class="Login">
-  <meta charset="UTF-8">
-   <div class="acclogin">
-     <label for="account">帳號：</label>
-     <input name="account" type="text" v-model="loginData.account">
-     <label for="account">密碼：</label>
-     <input name="account" type="text" v-model="loginData.password">
-   </div>
-    <div class="logBlocks">
-      <button class="log" @click="login">登入</button>
-      <button class="log" @click="forgetPassword">忘記密碼</button>
-   </div>
-   <div v-if="loginData.account != ''&& loginData.password !=''">
-   </div>
+  <div class="testHome">
+    <div>
+      <img src="../assets/login.jpg">
+    </div>
+    <div class="btnBlocks">
+      <div class="acclogin">
+        <label for="account">帳號：</label>
+        <input name="account" type="text" v-model="loginData.account">
+        <label for="account">密碼：</label>
+        <input name="account" type="text" v-model="loginData.password">
+        <div class="logBlocks">
+          <button class="log" @click="login">登入</button>
+          <button class="log" @click="forgetPassword">忘記密碼</button>
+        </div>
+      </div>
+    </div>
    </div>
 </template>
 
@@ -54,34 +56,39 @@ export default {
 }
 </script>
 <style scoped>
-.Login{
-  background: url('../assets/login.jpg') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
+.testHome{
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+.btnBlocks{
+  position: absolute;
+  margin: 0px -50px -15px 0px;
+  transform: translate3d(500px, -155px, 0px);
 }
 .logBlocks{
- position: absolute;
- bottom: 26%;
- right: 15%;
-}
-.Login .log{
-  background-color: burlywood;
-  border-radius: 12px;
-  color: aliceblue;
-  width: 130px;
-  height: 90px;
-  font-size: 30px;
-  margin-left : 40px;
+  width: 340px;
 }
 .acclogin{
   position: absolute;
-  right: 30%;
-  top: 30%;
+  right: 400px;
   width: 120px;
   height: 80px;
   font-size: 30px;
-  margin-left : 40px;
+  margin-left : 30px;
+}
+
+.testHome .log{
+  background-color: burlywood;
+  border-radius: 12px;
+  color: aliceblue;
+  width: 140px;
+  height: 90px;
+  font-size: 30px;
+  margin-left : 30px;
 }
 .acclogin input{
   margin:25px;
