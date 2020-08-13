@@ -1,5 +1,5 @@
 <template>
-  <div class="xiao-container">			
+  <div class="NewAccount">			
     <div>
       <div class="formBox">
         <img src="../assets/account.jpg" style="width:100%;">
@@ -87,23 +87,19 @@ export default {
 	margin:25px;
 }
 .formBox input{
-  border-radius: 15px;
+  /* border-radius: 15px; */
   height: 30px;
   width: 320px;
   font-size:15px;
 }
 .NewAccount .btn{
-background-color: burlywood;
+  background-color:gold;
   border-radius: 12px;
-  color: aliceblue;
-  width: 140px;
-  height: 90px;
-  font-size: 30px;
-  margin-left : 30px;
+  color:black;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  margin-left : 20px;
 } 
-.xiao-container{
-  display: flex;
-  align-items: center;
-  height: 100vh;
-}
+
 </style>
