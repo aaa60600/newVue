@@ -42,7 +42,7 @@ export default {
   display: inline-block;
   width: 120px;
   height: 80px;
-  font-size: 30px;
+  font-size: 20px;
   margin-left : 30px;
   cursor: pointer;
 }

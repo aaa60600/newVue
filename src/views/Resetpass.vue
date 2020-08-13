@@ -88,7 +88,7 @@ export default {
   vertical-align: middle;
 }
 .respass input{
-  border-radius: 15px;
+  /* border-radius: 15px; */
   height: 30px;
   width: 320px;
   font-size:15px;

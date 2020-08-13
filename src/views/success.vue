@@ -58,10 +58,10 @@ export default {
 .showTime{
   font-size: 30px;  
   color: orangered;
-  background-color: dodgerblue;
+  background-color:yellow;
   position: absolute;
   z-index: 1;
-  margin: 0px -50px -15px 0px;
+  margin: 0px -50px 0px 0px;
   transform: translate3d(37vw, 25vh, 0px);
 }
 </style>

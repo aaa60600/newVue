@@ -82,17 +82,17 @@ export default {
 }
 
 .testHome .log{
-  background-color: burlywood;
+  background-color:orangered;
   border-radius: 12px;
-  color: aliceblue;
-  width: 140px;
-  height: 90px;
-  font-size: 30px;
+  color:aliceblue;
+  width: 120px;
+  height: 80px;
+  font-size: 20px;
   margin-left : 30px;
 }
 .acclogin input{
   margin:25px;
-  border-radius: 15px;
+  /* border-radius: 15px; */
   height: 30px;
   width: 320px;
   font-size:20px;

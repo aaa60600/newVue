@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import HomeCopy from '../views/HomeCopy.vue'
 import Login from '../views/Login.vue'
 import NewAccount from '../views/NewAccount.vue'
 import Forget from '../views/forget.vue'
@@ -18,11 +17,7 @@ Vue.use(VueRouter)
     name: 'Home',
     component: Home
   },
-  {
-    path: '/HomeCopy',
-    name: 'HomeCopy',
-    component: HomeCopy
-  },
+
   //步驟2. 建立路由物件
   // 以下示範
   // {
