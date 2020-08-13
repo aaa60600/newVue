@@ -1,33 +1,56 @@
 <template>
-<div class="forget-pass">	
-	<div class="formBox">
-					<img class="image" src="../assets/forget.jpg">
-			</div>		
-			<form action="#" method="post" class="forgetBox">
-				<div class="username-box">
-					<span class="xiao-require">*</span>
-					<label for="username">會員帳號</label>
-					<div class="xiao-input">
-						<input type="text" id="username" name="username" placeholder="請输入帳號" />
-					</div>
-				</div>
-
-				<div class="forgetBox">
-					<span class="xiao-require">*</span>
-					<label for="userEmail">會員信箱</label>
-					<div class="xiao-input">
-						<input type="text" id="userEmail" name="userEmail" placeholder="請输入您註冊的信箱帳號，如：123@gmail.com" />
-					</div>
-				</div>
-
-				<div class="submitbox">
-					<button class="new" @click="Resetpass">發送新密碼</button>
-				</div>
-
-			</form>
+<div class="forget-pass">
+		<div class="formBox">
+				<img class="image" src="../assets/forget.jpg">
 		</div>
+		<form action="javascript:void(0);" method="post" class="forgetBox">
+			<div class="username-box">
+				<span class="xiao-require">*</span>
+				<label for="username">會員帳號</label>
+				<div class="xiao-input">
+					<input v-model="inputData.account" type="text" id="username" name="username" placeholder="請输入帳號" />
+				</div>
+			</div>
+			<div class="forgetBox">
+				<span class="xiao-require">*</span>
+				<label for="userEmail">會員信箱</label>
+				<div class="xiao-input">
+					<input v-model="inputData.userEmail" type="text" id="userEmail" name="userEmail" placeholder="請输入您註冊的信箱帳號，如：123@gmail.com" />
+				</div>
+			</div>
+			<div class="submitbox">
+				<button class="new" @click="sendNewPassword">發送新密碼</button>
+			</div>
+		</form>
+	</div>
 </template>
-
+<script>
+export default {
+  name: 'forget',
+  data() {
+      return {
+        initInput:{
+          account:'',
+          userEmail:'',
+          newPassword:'',
+        },
+        inputData:{}
+      }
+    },
+  created(){
+    this.forgetInput();
+  },
+  methods:{
+    forgetInput(){
+      this.inputData = JSON.parse(JSON.stringify(this.initInput));
+    },
+    sendNewPassword(){
+			// this.$router.push('/forget')
+			alert('send new password');
+    }
+  }
+}
+</script>
 <style scoped>
 .forget-pass{
     position: relative;
