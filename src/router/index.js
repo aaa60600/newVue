@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import HomeCopy from '../views/HomeCopy.vue'
 import Login from '../views/Login.vue'
 import NewAccount from '../views/NewAccount.vue'
-import Forget from '../views/Forget.vue'
+import Forget from '../views/forget.vue'
 import success from '../views/success.vue'
 import Resetpass from '../views/Resetpass.vue'
 
@@ -48,7 +48,7 @@ Vue.use(VueRouter)
   {
     path: '/Forget',// 忘記密碼
     name: 'Forget',
-    component: () => import('../views/Forget.vue')
+    component: () => import('../views/forget.vue')
   },
   {
     path: '/pageExample',// 返回首頁

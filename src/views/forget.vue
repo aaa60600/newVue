@@ -1,17 +1,17 @@
 <template>
-<div class="forget-pass">
+  <div class="forget-pass">
 		<div class="forgetBox">
 				<img class="image" src="../assets/forget.jpg">
 		</div>
 		<form action="javascript:void(0);" method="post" class="forgetBox">
-			<div class="forgetBox">
+			<div class="box">
 				<span class="xiao-require">*</span>
 				<label for="username">會員帳號</label>
 				<div class="xiao-input">
 					<input v-model="inputData.account" type="text" id="username" name="username" placeholder="請输入帳號" />
 				</div>
 			</div>
-			<div class="forgetBox">
+			<div class="box">
 				<span class="xiao-require">*</span>
 				<label for="userEmail">會員信箱</label>
 				<div class="xiao-input">
@@ -53,12 +53,14 @@ export default {
 </script>
 <style scoped>
 .forget-pass{
-    position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
 }
-/* .forgetBox{
+.forgetBox{
     display: inline-block;
     vertical-align: middle;
-} */
+}
 
 .image{
   width: 80%;
@@ -81,5 +83,8 @@ export default {
   height: 50px;
   font-size: 15px;
   margin-left : px;
+}
+.box{
+	margin:25px;
 }
 </style>
