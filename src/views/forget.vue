@@ -4,7 +4,7 @@
 				<img class="image" src="../assets/forget.jpg">
 		</div>
 		<form action="javascript:void(0);" method="post" class="forgetBox">
-			<div class="username-box">
+			<div class="forgetBox">
 				<span class="xiao-require">*</span>
 				<label for="username">會員帳號</label>
 				<div class="xiao-input">
@@ -45,8 +45,8 @@ export default {
       this.inputData = JSON.parse(JSON.stringify(this.initInput));
     },
     sendNewPassword(){
-			// this.$router.push('/forget')
-			alert('send new password');
+			this.$router.push('/Resetpass')
+			// alert('send new password');
     }
   }
 }

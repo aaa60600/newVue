@@ -15,14 +15,13 @@
    </div>
    </div>
 </template>
-<script>
-//import HelloWorld from '@/components/HelloWorld.vue'
 
+<script>
 export default {
   name: 'Login',
     data() {
        return {
-         loginInit:{
+           loginInit:{
            account:'',
            password:'',
          },
@@ -49,7 +48,7 @@ export default {
       this.loginData = JSON.parse(JSON.stringify(this.loginInit));
     },
     forgetPassword(){
-      this.$router.push('/forget')
+      this.$router.push('/Forget')
     }
   }
 }
