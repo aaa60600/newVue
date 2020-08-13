@@ -4,8 +4,9 @@ import Home from '../views/Home.vue'
 import HomeCopy from '../views/HomeCopy.vue'
 import Login from '../views/Login.vue'
 import NewAccount from '../views/NewAccount.vue'
-import resetinput from '../views/resetInput.vue'
+import forget from '../views/forget.vue'
 import success from '../views/success.vue'
+import Resetpass from '../views/Resetpass.vue'
 
 //步驟1. 建立頁面且引用
 import pageExample from '../views/pageExample.vue'
@@ -45,14 +46,19 @@ Vue.use(VueRouter)
     component: () => import('../views/success.vue')
   },
   {
-    path: '/resetInput',// 忘記密碼
-    name: 'resetInput',
-    component: () => import('../views/resetInput.vue')
+    path: '/forget',// 忘記密碼
+    name: 'forget',
+    component: () => import('../views/forget.vue')
   },
   {
     path: '/pageExample',// 返回首頁
     name: 'pageExample',
     component: () => import('../views/pageExample.vue')
+  },
+  {
+    path: '/Resetpass',// 設定新密碼
+    name: 'Resetpass',
+    component: () => import('../views/Resetpass.vue')
   },
   
 ]

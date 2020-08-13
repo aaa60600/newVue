@@ -1,10 +1,10 @@
 <template>
 <div class="forget-pass">	
 	<div class="formBox">
-					<img src="../assets/forget.jpg">
+					<img class="image" src="../assets/forget.jpg">
 			</div>		
 			<form action="#" method="post" class="forgetBox">
-				<div class="box xiao-username-box">
+				<div class="username-box">
 					<span class="xiao-require">*</span>
 					<label for="username">會員帳號</label>
 					<div class="xiao-input">
@@ -20,8 +20,8 @@
 					</div>
 				</div>
 
-				<div class="box xiao-submit-box">
-					<input id = "xiao-submit-button" type="submit" value="發送新密碼">
+				<div class="submitbox">
+					<button class="new" @click="Resetpass">發送新密碼</button>
 				</div>
 
 			</form>
@@ -30,9 +30,29 @@
 
 <style scoped>
 .forget-pass{
-    width:50%;
-	height:100px;
-	display: inline-block;
-	max-width: 100px;
+    position: relative;
+}
+
+.image{
+  width: 80%;
+  height: auto;
+}
+.forget-passbox{
+	margin:25px;
+}
+.forget-pass input{
+  height: 30px;
+  width: 330px;
+  font-size:15px;
+  margin:15px;
+}
+.forget-pass button{
+  background-color:blueviolet;
+  border-radius: 12px;
+  color: aliceblue;
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+  margin-left : px;
 }
 </style>

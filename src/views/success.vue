@@ -9,8 +9,8 @@ export default {
   data(){
     return{
       timeOut:null,
-      second: 6,
-      showSecond: 6,
+      second: 5,
+      showSecond: 5,
     }
   },
   created(){

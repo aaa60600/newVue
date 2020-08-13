@@ -31,7 +31,7 @@
 
 				<div class="box-goLogin">
 					<button class="btn" @click="$router.push('/success')">加入會員</button>
-    				<button class="btn" @click="$router.push('/home')">返回首頁</button>
+    				<button class="btn" @click="$router.push('/')">返回首頁</button>
 				</div>
 
 			</form>
