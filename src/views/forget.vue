@@ -1,9 +1,9 @@
 <template>
-  <div class="forget-pass">
+  <div class="forget-pass" v-loading="loading">
 		<div class="forgetBox">
 				<img class="image" src="../assets/forget.jpg">
 		</div>
-		<form class="Box">
+		<div class="Box">
 			<div class="Box">
 				<span class="xiao-require">*</span>
 				<label for="username">會員帳號</label>
@@ -21,56 +21,53 @@
 			<div class="submitbox">
 				<input id = "submit-button" type="submit" @click="Resetpass" value="發送新密碼">
 				</div>
-		</form>
+		</div>
 	</div>
 </template>
 <script>
-const axios = require("axios");
-
+import api from './../service/user-service'
 export default {
   name: 'forget',
   data: () => ({
+    loading: false,
     loginInit: {
       username: "",
       email: "",
     },
-    loginData: [],
+    loginData: {},
   }),
+  created() {
+    this.resetInput();
+  },
   methods: {
-    login() {
-	  console.log(this.loginData.username);
-	  console.log(this.loginData.email);
+    Resetpass() {
       if (this.loginData.username == "") {
-        alert("請輸入帳號!");
+        this.$message.error("請輸入帳號!");
         return;
       } else if (this.loginData.email == "") {
-        alert("請輸入信箱!");
+        this.$message.error("請輸入信箱!");
         return;
       }
-      axios
-        .post(
-          "http://10.10.1.130/mapGame/login/checkName",
-          JSON.stringify({
-            username: this.loginData.username,
-            email: this.loginData.email,
-          }),
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then(response=> {
-          if (response.data.status) {
-            alert("成功寄出驗證信!");            
-          } else {
-            alert("登入失敗!");
-          }
-          console.log(response.data.username, response.data.status);
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
+       this.loading = true;
+      api.getUser().then(response => {
+        if (response.status == 200) {
+          this.$message.success("登入成功，準備進入遊戲!");
+          // setTimeout(() => {
+          // let expireDays = 1000 * 60 * 60 * 24 * 15;
+          // this.loginSuccess();
+          // this.$cookie.set("username", response.data.username, expireDays);
+          // }, 1000);
+          return;
+        }
+        this.$message.error("登入異常");
+        
+      })
+      .catch(err => {
+        console.log(err);
+        this.$message.error("系統異常");
+      }).finally(() => {
+        this.loading = false;
+      })
     },
     resetInput() {
       this.loginData = JSON.parse(JSON.stringify(this.loginInit));
@@ -95,15 +92,14 @@ export default {
 .forgetBox{
     display: inline-block;
     vertical-align: middle;
+    	margin:25px;
 }
 
 .image{
   width: 80%;
   height: auto;
 }
-.forgetBox{
-	margin:25px;
-}
+
 .forget-pass input{
   font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
   height: 30px;

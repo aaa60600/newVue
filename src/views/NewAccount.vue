@@ -1,11 +1,10 @@
 <template>
-  <!-- <div class="xiao-container"> -->
-  <div class="NewAccount">
+  <div class="NewAccount" v-loading="loading">
     <div>
       <div class="formBox">
         <img src="../assets/account.jpg" style="width:100%;">
 			</div>
-			<form class="formBox">
+			<div class="formBox">
 				<div class="box">
 					<span class="xiao-require">*</span>
 					<label for="username">建立帳號</label>
@@ -31,11 +30,10 @@
 				</div>
 
 				<div class="box-goLogin">
-					<button class="btn" @click="$router.push('/success')">加入會員</button>
+					<button class="btn" @click="register">加入會員</button>
     				<button class="btn" @click="$router.push('/')">返回首頁</button>
 				</div>
-
-</form>
+      </div>
     </div>
   </div>
 </template>
@@ -44,19 +42,18 @@
 // 如果要含資料輸入或輸出 就是需要變數
 // html上面的 {{...}} v-xx="..." 或者 :class="..." :style="..." 也是屬於動態資料
 // 整段script都需要使用
-
-const axios = require("axios");
-
+import api from './../service/user-service'
 export default {
   name: 'NewAccount',
   //宣告這個檔案裡面所使用到的變數
   data: () => ({
+      loading:false,
       accountDataInit: {
         username: "",
         password: "",
         email: "",
       },
-      accountData: [],
+      accountData: {},
   }),
   // 生命週期
   created() {
@@ -70,43 +67,38 @@ export default {
     register() {
       console.log(this.accountData);
       if (this.accountData.username == "") {
-        alert("請輸入帳號!");
-        return;
-      } else if (this.accountData.password == "") {
-        alert("請輸入密碼!");
-        return;
-      } else if (this.accountData.email == "") {
-        alert("請輸入信箱!");
+        this.$message.error("請輸入帳號!");
         return;
       }
-      axios
-        .post(
-          "http://10.10.1.130/mapGame/login/register",
-          JSON.stringify({
-            username: this.accountData.username,
-            password: this.accountData.password,
-            email: this.accountData.email,
-          }),
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then(response=> {
-          if (response.data.status) {
-            alert("註冊成功，請去信箱驗證!");
-            setTimeout(() => {
-            this.login();
-            }, 1000);
-          } else {
-            alert("註冊失敗!");
-          }
-          console.log(response.data.username, response.data.status);
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
+      if (this.accountData.password == "") {
+        this.$message.error("請輸入密碼!");
+        return;
+      }
+      if (this.accountData.email == "") {
+        this.$message.error("請輸入信箱!");
+        return;
+      }
+       this.loading = true;
+      api.getUser().then(response => {
+        if (response.status == 200) {
+          this.$message.success("登入成功，準備進入遊戲!");
+          this.$router.push('/success');
+          // setTimeout(() => {
+          // let expireDays = 1000 * 60 * 60 * 24 * 15;
+          // this.loginSuccess();
+          // this.$cookie.set("username", response.data.username, expireDays);
+          // }, 1000);
+          return;
+        }
+        this.$message.error("登入異常");
+        
+      })
+      .catch(err => {
+        console.log(err);
+        this.$message.error("系統異常");
+      }).finally(() => {
+        this.loading = false;
+      })
     },
     login() {
       this.$router.push("/Login");

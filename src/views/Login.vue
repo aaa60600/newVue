@@ -1,5 +1,5 @@
 <template>
-  <div class="testHome">
+  <div class="testHome" v-loading="loading">
     <div>
       <img src="../assets/login.jpg">
     </div>
@@ -19,56 +19,51 @@
 </template>
 
 <script>
-const axios = require("axios");
-
+import api from './../service/user-service'
 export default {
   name: 'Login',
   data: () => ({
+    loading:false,
     loginInit: {
       account: "",
       password: "",
     },
-    loginData: [],
+    loginData: {},
   }),
+  created() {
+    this.loginData = JSON.parse(JSON.stringify(this.loginInit));
+  },
   methods: {
     login() {
       console.log(this.loginData);
       if (this.loginData.account == "") {
-        alert("請輸入帳號!");
-        return;
-      } else if (this.loginData.password == "") {
-        alert("請輸入密碼!");
+        this.$message.error("請輸入帳號!");
         return;
       }
-      axios
-        .post(
-          "http://localhost/mapGame/login/checkLogin",
-          JSON.stringify({
-            username: this.loginData.account,
-            password: this.loginData.password,
-          }),
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then(response=> {
-          if (response.data.status) {
-            alert("登入成功，準備進入遊戲!");
-            setTimeout(() => {
-            let expireDays = 1000 * 60 * 60 * 24 * 15;
-            this.loginSuccess();
-            this.$cookie.set("username", response.data.username, expireDays);
-            }, 1000);
-          } else {
-            alert("登入失敗!");
-          }
-          console.log(response.data.username, response.data.status);
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
+      if (this.loginData.password == "") {
+        this.$message.error("請輸入密碼!");
+        return;
+      }
+      this.loading = true;
+      api.getUser().then(response => {
+        if (response.status == 200) {
+          this.$message.success("登入成功，準備進入遊戲!");
+          // setTimeout(() => {
+          // let expireDays = 1000 * 60 * 60 * 24 * 15;
+          // this.loginSuccess();
+          // this.$cookie.set("username", response.data.username, expireDays);
+          // }, 1000);
+          return;
+        }
+        this.$message.error("登入異常");
+        
+      })
+      .catch(err => {
+        console.log(err);
+        this.$message.error("系統異常");
+      }).finally(() => {
+        this.loading = false;
+      })
     },
     resetInput() {
       this.loginData = JSON.parse(JSON.stringify(this.loginInit));

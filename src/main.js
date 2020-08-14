@@ -1,7 +1,5 @@
 import Vue from "vue";
 import axios from "axios";
-import VueCookie from "vue-cookie";
-import VueAxios from "vue-axios";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
@@ -13,8 +11,6 @@ import "element-ui/lib/theme-chalk/index.css";
 import "./assets/css/main.css";
 //**********讓vue使用套件***********
 Vue.use(ElementUI);
-Vue.use(VueAxios, axios);
-Vue.use(VueCookie);
 // 以下請勿更動
 Vue.config.productionTip = false;
 new Vue({
