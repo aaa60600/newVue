@@ -20,6 +20,7 @@
 
 <script>
 import api from './../service/user-service'
+import util from './../common/utils'
 export default {
   name: 'Login',
   data: () => ({
@@ -48,11 +49,8 @@ export default {
       api.getUser().then(response => {
         if (response.status == 200) {
           this.$message.success("登入成功，準備進入遊戲!");
-          // setTimeout(() => {
-          // let expireDays = 1000 * 60 * 60 * 24 * 15;
-          // this.loginSuccess();
-          // this.$cookie.set("username", response.data.username, expireDays);
-          // }, 1000);
+          util.setCookie("username", response.data.username, 15);
+          this.loginSuccess();
           return;
         }
         this.$message.error("登入異常");
