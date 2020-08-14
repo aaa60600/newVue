@@ -3,56 +3,91 @@
 		<div class="forgetBox">
 				<img class="image" src="../assets/forget.jpg">
 		</div>
-		<form action="javascript:void(0);" method="post" class="forgetBox">
-			<div class="box">
+		<form class="Box">
+			<div class="Box">
 				<span class="xiao-require">*</span>
 				<label for="username">會員帳號</label>
 				<div class="xiao-input">
-					<input v-model="inputData.account" type="text" id="username" name="username" placeholder="請输入帳號" />
-				</div>
+					<input type="text" id="username" name="username" placeholder="請输入帳號" v-model="loginData.username"/>
+					</div>
 			</div>
-			<div class="box">
+			<div class="Box">
 				<span class="xiao-require">*</span>
-				<label for="userEmail">會員信箱</label>
+				<label for="email">會員信箱</label>
 				<div class="xiao-input">
-					<input v-model="inputData.userEmail" type="text" id="userEmail" name="userEmail" placeholder="請输入您註冊的信箱帳號，如：123@gmail.com" />
-				</div>
+					<input type="text" id="email" name="email" placeholder="請输入您註冊的信箱帳號，如：123@gmail.com" v-model="loginData.email" />
+					</div>
 			</div>
 			<div class="submitbox">
-				<button class="new" @click="sendNewPassword">發送新密碼</button>
-			</div>
+				<input id = "submit-button" type="submit" @click="Resetpass" value="發送新密碼">
+				</div>
 		</form>
 	</div>
 </template>
 <script>
+const axios = require("axios");
+
 export default {
   name: 'forget',
-  data() {
-      return {
-        initInput:{
-          account:'',
-          userEmail:'',
-          newPassword:'',
-        },
-        inputData:{}
+  data: () => ({
+    loginInit: {
+      username: "",
+      email: "",
+    },
+    loginData: [],
+  }),
+  methods: {
+    login() {
+	  console.log(this.loginData.username);
+	  console.log(this.loginData.email);
+      if (this.loginData.username == "") {
+        alert("請輸入帳號!");
+        return;
+      } else if (this.loginData.email == "") {
+        alert("請輸入信箱!");
+        return;
       }
+      axios
+        .post(
+          "http://10.10.1.130/mapGame/login/checkName",
+          JSON.stringify({
+            username: this.loginData.username,
+            email: this.loginData.email,
+          }),
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then(response=> {
+          if (response.data.status) {
+            alert("成功寄出驗證信!");            
+          } else {
+            alert("登入失敗!");
+          }
+          console.log(response.data.username, response.data.status);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     },
-  created(){
-    this.forgetInput();
+    resetInput() {
+      this.loginData = JSON.parse(JSON.stringify(this.loginInit));
+    },
+    loginSuccess() {
+      this.$router.push("/change");
+    },
+    forgetPassword() {
+      this.$router.push("/Resetpass");
+    },
   },
-  methods:{
-    forgetInput(){
-      this.inputData = JSON.parse(JSON.stringify(this.initInput));
-    },
-    sendNewPassword(){
-			this.$router.push('/Resetpass')
-			// alert('send new password');
-    }
-  }
-}
+};
 </script>
 <style scoped>
 .forget-pass{
+  font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
+  font-size: 20px;
   display: flex;
   align-items: center;
   height: 100vh;
@@ -66,23 +101,25 @@ export default {
   width: 80%;
   height: auto;
 }
-.forget-passbox{
+.forgetBox{
 	margin:25px;
 }
 .forget-pass input{
+  font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
   height: 30px;
   width: 330px;
   font-size:15px;
   margin:15px;
 }
-.forget-pass button{
+.submitbox input{
+  font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
   background-color:blueviolet;
   border-radius: 12px;
   color: aliceblue;
-  width: 100px;
-  height: 50px;
-  font-size: 15px;
-  margin-left : px;
+  width: 120px;
+  height: 80px;
+  font-size: 20px;
+  margin-left : 30px;
 }
 .box{
 	margin:25px;
