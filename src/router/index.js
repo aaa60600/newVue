@@ -61,6 +61,11 @@ Vue.use(VueRouter)
     name: 'cart',
     component: () => import('../Vue_cart/cart.vue')
   },
+  {
+    path: '/shopCar',// 購物車
+    name: 'shopCar',
+    component: () => import('../Vue_cart/shopCar.vue')
+  },
 
 ]
 
