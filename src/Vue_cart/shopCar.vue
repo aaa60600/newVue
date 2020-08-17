@@ -2,7 +2,11 @@
   <div v-loading="loading" class="flexbox">
     <div class="panel">
       <span v-for="item in dataList" :key="item.id" class="panel-price">
+<<<<<<< HEAD
         <img :width="200" src="item.imgUrl">
+=======
+        <img width="200" :src="item.imgUrl">
+>>>>>>> 63c449e696ad56761b627971ebe7eb065c447843
         <div>
           {{item.name}}
         </div>
@@ -34,7 +38,7 @@ export default {
             this.dataList = [];
             return;
           }
-          this.$message.error("登入異常");          
+          this.$message.error("登入異常");
         })
         .catch(err => {
           console.log(err);
@@ -48,7 +52,11 @@ export default {
         {
           name:'Monsters',
           price:'123',
+<<<<<<< HEAD
           imgUrl:require('../assets/role/monsters2(31).png'),
+=======
+          imgUrl:require('../assets/role/monsters.png'),
+>>>>>>> 63c449e696ad56761b627971ebe7eb065c447843
         },
         {
           name:'Monsters',
@@ -123,5 +131,9 @@ export default {
     justify-content: center;
     align-items: center;
   }
+<<<<<<< HEAD
 
 </style>
+=======
+</style>
+>>>>>>> 63c449e696ad56761b627971ebe7eb065c447843
