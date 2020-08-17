@@ -2,7 +2,7 @@
   <div v-loading="loading" class="flexbox">
     <div class="panel">
       <span v-for="item in dataList" :key="item.id" class="panel-price">
-        <img :src="item.imgUrl">
+        <img :width="200" src="item.imgUrl">
         <div>
           {{item.name}}
         </div>
@@ -46,19 +46,19 @@ export default {
     getDataListNotApi(){
       this.dataList = [
         {
-          name:'商品1',
+          name:'Monsters',
           price:'123',
-          imgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBl4exyImeXMZkIEG2IdIgImacTQG3ngrT6JcGvBHWIf-u1wBmEgOZrOeBIw&usqp=CAc'
+          imgUrl:require('../assets/role/monsters2(31).png'),
         },
         {
-          name:'商品1',
+          name:'Monsters',
           price:'123',
-          imgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBl4exyImeXMZkIEG2IdIgImacTQG3ngrT6JcGvBHWIf-u1wBmEgOZrOeBIw&usqp=CAc'
+          imgUrl:require('../assets/role/monsters2(53).png'),
         },
         {
-          name:'商品1',
+          name:'Monsters',
           price:'123',
-          imgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBl4exyImeXMZkIEG2IdIgImacTQG3ngrT6JcGvBHWIf-u1wBmEgOZrOeBIw&usqp=CAc'
+          imgUrl:require('../assets/role/monsters2(80).png'),
         },
         {
           name:'商品1',
@@ -123,4 +123,5 @@ export default {
     justify-content: center;
     align-items: center;
   }
+
 </style>
