@@ -1,18 +1,18 @@
 <template>
   <div v-loading="loading" class="flexbox">
     <div class="panel">
+      <div class="submitbox">
+				<label for="">選擇角色</label>
+				</div>
       <span v-for="item in dataList" :key="item.id" class="panel-price">
-<<<<<<< HEAD
-        <img :width="200" src="item.imgUrl">
-=======
         <img width="200" :src="item.imgUrl">
->>>>>>> 63c449e696ad56761b627971ebe7eb065c447843
         <div>
           {{item.name}}
         </div>
         <div>
           {{item.price}}
         </div>
+          <el-button type="ghost" size="madin">選擇</el-button>
       </span>
     </div>
   </div>
@@ -51,57 +51,33 @@ export default {
       this.dataList = [
         {
           name:'Monsters',
-          price:'123',
-<<<<<<< HEAD
+          price:'A',
           imgUrl:require('../assets/role/monsters2(31).png'),
-=======
-          imgUrl:require('../assets/role/monsters.png'),
->>>>>>> 63c449e696ad56761b627971ebe7eb065c447843
         },
         {
           name:'Monsters',
-          price:'123',
+          price:'B',
           imgUrl:require('../assets/role/monsters2(53).png'),
         },
         {
           name:'Monsters',
-          price:'123',
+          price:'C',
           imgUrl:require('../assets/role/monsters2(80).png'),
         },
         {
-          name:'商品1',
-          price:'123',
-          imgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBl4exyImeXMZkIEG2IdIgImacTQG3ngrT6JcGvBHWIf-u1wBmEgOZrOeBIw&usqp=CAc'
+          name:'superHero',
+          price:'D',
+          imgUrl:require('../assets/role/superhero(9).png'),
         },
         {
-          name:'商品1',
-          price:'123',
-          imgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBl4exyImeXMZkIEG2IdIgImacTQG3ngrT6JcGvBHWIf-u1wBmEgOZrOeBIw&usqp=CAc'
+          name:'superHero',
+          price:'E',
+          imgUrl:require('../assets/role/superhero(25).png'),
         },
         {
-          name:'商品1',
-          price:'123',
-          imgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBl4exyImeXMZkIEG2IdIgImacTQG3ngrT6JcGvBHWIf-u1wBmEgOZrOeBIw&usqp=CAc'
-        },
-        {
-          name:'商品1',
-          price:'123',
-          imgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBl4exyImeXMZkIEG2IdIgImacTQG3ngrT6JcGvBHWIf-u1wBmEgOZrOeBIw&usqp=CAc'
-        },
-        {
-          name:'商品1',
-          price:'123',
-          imgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBl4exyImeXMZkIEG2IdIgImacTQG3ngrT6JcGvBHWIf-u1wBmEgOZrOeBIw&usqp=CAc'
-        },
-        {
-          name:'商品1',
-          price:'123',
-          imgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBl4exyImeXMZkIEG2IdIgImacTQG3ngrT6JcGvBHWIf-u1wBmEgOZrOeBIw&usqp=CAc'
-        },
-        {
-          name:'商品1',
-          price:'123',
-          imgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBl4exyImeXMZkIEG2IdIgImacTQG3ngrT6JcGvBHWIf-u1wBmEgOZrOeBIw&usqp=CAc'
+          name:'superHero',
+          price:'F',
+          imgUrl:require('../assets/role/superhero(28).png'),
         },
       ];
     }
@@ -112,6 +88,7 @@ export default {
 
 <style scoped>
   .panel-price {
+    font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
     width: 210px;
     border: 1px solid cadetblue;
     padding: 10px;
@@ -121,19 +98,16 @@ export default {
     cursor: pointer;
   }
   .panel-price:hover{
+    font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
       transform:scale(1.2);
   }
   .panel{
     width: 70%;
   }
   .flexbox{
+    font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-<<<<<<< HEAD
-
 </style>
-=======
-</style>
->>>>>>> 63c449e696ad56761b627971ebe7eb065c447843
