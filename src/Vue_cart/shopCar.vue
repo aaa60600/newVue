@@ -2,7 +2,7 @@
   <div v-loading="loading" class="flexbox">
     <div class="panel">
       <div class="submitbox">
-				<label for="">選擇角色</label>
+            <title>選擇角色</title>
 				</div>
       <span v-for="item in dataList" :key="item.id" class="panel-price">
         <img width="200" :src="item.imgUrl">
