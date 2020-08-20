@@ -2,15 +2,15 @@
   <div v-loading="loading" class="flexbox">
     <div class="panel">
       <div class="submitbox">
-            <title>選擇角色</title>
+            <h1>選擇角色</h1>
 				</div>
-      <span v-for="item in dataList" :key="item.id" class="panel-price">
+      <span v-for="item in dataList" :key="item.id" class="panel-number">
         <img width="200" :src="item.imgUrl">
         <div>
           {{item.name}}
         </div>
         <div>
-          {{item.price}}
+          {{item.number}}
         </div>
           <el-button type="ghost" size="madin">選擇</el-button>
       </span>
@@ -51,32 +51,32 @@ export default {
       this.dataList = [
         {
           name:'Monsters',
-          price:'A',
+          number:'A',
           imgUrl:require('../assets/role/monsters2(31).png'),
         },
         {
           name:'Monsters',
-          price:'B',
+          number:'B',
           imgUrl:require('../assets/role/monsters2(53).png'),
         },
         {
           name:'Monsters',
-          price:'C',
+          number:'C',
           imgUrl:require('../assets/role/monsters2(80).png'),
         },
         {
           name:'superHero',
-          price:'D',
+          number:'D',
           imgUrl:require('../assets/role/superhero(9).png'),
         },
         {
           name:'superHero',
-          price:'E',
+          number:'E',
           imgUrl:require('../assets/role/superhero(25).png'),
         },
         {
           name:'superHero',
-          price:'F',
+          number:'F',
           imgUrl:require('../assets/role/superhero(28).png'),
         },
       ];
@@ -87,7 +87,7 @@ export default {
 </script>
 
 <style scoped>
-  .panel-price {
+  .panel-number {
     font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
     width: 210px;
     border: 1px solid cadetblue;
@@ -97,7 +97,7 @@ export default {
     transition:All 0.5s ease;
     cursor: pointer;
   }
-  .panel-price:hover{
+  .panel-number:hover{
     font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
       transform:scale(1.2);
   }
