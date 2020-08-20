@@ -42,7 +42,7 @@
 				rechargeParams: {
 					"totalAmt": '', //金额
 					"paymentType": "0", //支付方式[0:街口支付,1:LinePay,2:餘額,3:活動]
-					"transType": "0" //交易类型[0:儲值,1:消費]
+          "transType": "0" //交易類型[0:儲值,1:消費]
 				}
 			}
 		},
@@ -123,7 +123,6 @@
 </script>
  
 <style scoped>
-	/* 信息列表样式 */
 	.msg-box > li {
 		list-style: none;
 		border-bottom: 1px solid #c5c5c5;
