@@ -1,13 +1,14 @@
 <template>
 	<div class="box-card">
 		<div>
-      <img src="../assets/Deposit.png">
+      <img src="../assets/Deposit.jpg">
     </div>
 		<ul class="msg-box">
-				<li>
-					<h4>沒鑽石買寶物啦~~快來儲值一下，小夥伴們需要你///</h4>
-				</li>
-				<input type="text" placeholder="訂單編號"  ref="this.form.number" />
+			<li>
+				<h4>沒鑽石買寶物啦~~快來儲值一下，小夥伴們需要你///</h4>
+			</li>
+				<h4>訂單編號: <el-input :disabled="disabled" clearable v-model="this.form.number" placeholder="訂單編號" style="width: 150px;">
+				</el-input></h4>
 				<li>
 					<h4 style="margin-bottom: 20px;">儲值金額</h4>
 					<el-radio-group v-model="amountVal" @change="amountChange">
@@ -28,10 +29,12 @@
 					<h4 style="margin-bottom: 20px;"><img width="20" src="../assets/money/game(3).png" alt="">儲值金額</h4>
 					<el-input :disabled="disabled" clearable v-model="rechargeParams.totalAmt" placeholder="請輸入金額" style="width: 150px;"></el-input>
 				</li>
+				<li>
+					<div style="text-align: center; margin-top: 30px;">
+						<el-button type="primary" @click="finishPay">確認付款</el-button>
+					</div>
+				</li>
 			</ul>
-			<div style="text-align: center; margin-top: 30px;">
-				<el-button type="primary" @click="finishPay">確認付款</el-button>
-			</div>
 	</div>
 </template>
 
@@ -60,7 +63,7 @@ methods: {
 	// 获取当前日期的方法
 	getProjectNum () {
       const projectTime = new Date() // 當前標準時間
-      const Year = projectTime.getFullYear() // 獲取当前年份 支持IE和火狐浏览器.
+      const Year = projectTime.getFullYear() // 獲取当前年份
       const Month = projectTime.getMonth() + 1
       const Day = projectTime.getDate()
       var CurrentDate = Year
@@ -171,21 +174,21 @@ methods: {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  width: 90vw;
+  height: 90vh;
 }
 .msg-box > li{
 	list-style: none;
 	border-bottom: 1px solid #c5c5c5;
 	padding: 20px 10px;
 }
+.msg-box > li:last-child{
+	border-bottom: none;
+	padding:  0;
+}
 .msg-box{
   position: absolute;
-    margin: 0px 70px -15px 0px;
-    transform: translate3d(0px, 45px, 0px);
+    margin: 0px -50px -45px 0px;
+    transform: translate3d(-25px, 45px, 0px);
 }
-<<<<<<< HEAD
 </style>
-=======
-</style>
->>>>>>> 5cb8a074605f34131e9e08f16955db401d7eaf8a
