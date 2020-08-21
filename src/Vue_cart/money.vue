@@ -28,10 +28,12 @@
 					<h4 style="margin-bottom: 20px;"><img width="20" src="../assets/money/game(3).png" alt="">儲值金額</h4>
 					<el-input :disabled="disabled" clearable v-model="rechargeParams.totalAmt" placeholder="請輸入金額" style="width: 150px;"></el-input>
 				</li>
+				<li>
+					<div style="text-align: center; margin-top: 30px;">
+						<el-button type="primary" @click="finishPay">確認付款</el-button>
+					</div>
+				</li>
 			</ul>
-			<div style="text-align: center; margin-top: 30px;">
-				<el-button type="primary" @click="finishPay">確認付款</el-button>
-			</div>
 	</div>
 </template>
 
@@ -179,9 +181,13 @@ methods: {
 	border-bottom: 1px solid #c5c5c5;
 	padding: 20px 10px;
 }
+.msg-box > li:last-child{
+	border-bottom: none;
+	padding:  0;
+}
 .msg-box{
   position: absolute;
-    margin: 0px 70px -15px 0px;
-    transform: translate3d(0px, 45px, 0px);
+    margin: 0px -50px -15px 0px;
+    transform: translate3d(-25px, 45px, 0px);
 }
 </style>
