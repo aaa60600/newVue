@@ -23,6 +23,7 @@
 					<el-radio-group v-model="rechargeParams.paymentType" @change="paymentTypeChange">
 						<el-radio border :label="''+ 0"><img width="20" src="../assets/money/th.jpg" alt=""> 街口支付</el-radio>
 						<el-radio border :label="''+ 1"><img width="20" src="../assets/money/line.jpg" alt=""> LinePay</el-radio>
+						<el-radio border :label="''+ 2"><img width="20" src="../assets/money/ECPay.png" alt=""> ECPay</el-radio>
 					</el-radio-group>
 				</li>
 				<li>
@@ -122,9 +123,7 @@ methods: {
 						document.getElementById('payDiv').getElementsByTagName('form')[0].submit();
 					} else if (this.rechargeParams.paymentType == '2') {
 						this.$message.success('餘額支付成功');
-						this.$router.push({
 							name: 'order'
-						})
 					} else {
 						this.$message.success('活動支付')
 					}

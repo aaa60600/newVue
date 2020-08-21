@@ -1,11 +1,13 @@
 <template>
   <div v-loading="loading" class="flexbox">
+    <div>
+      <img src="../assets/role/role.jpg">
+    </div>
     <div class="panel">
       <div class="submitbox">
-            <h1>選擇角色</h1>
 				</div>
       <span v-for="item in dataList" :key="item.id" class="panel-number">
-        <img width="200" :src="item.imgUrl">
+        <img width="100" :src="item.imgUrl">
         <div>
           {{item.name}}
         </div>
@@ -64,6 +66,7 @@ export default {
           number:'C',
           imgUrl:require('../assets/role/monsters2(80).png'),
         },
+     
         {
           name:'superHero',
           number:'D',
@@ -99,15 +102,18 @@ export default {
   }
   .panel-number:hover{
     font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
-      transform:scale(1.2);
+      transform:scale(1.1);
   }
   .panel{
     width: 70%;
   }
   .flexbox{
-    font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  height: 90vh;
+}
 </style>
