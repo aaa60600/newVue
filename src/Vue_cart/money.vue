@@ -1,13 +1,12 @@
-
 <template>
 	<el-card class="box-card">
-		<ul class="msg-box">
+	<ul class="msg-box" img src="../assets/Deposit.jpg">
 			<li>
 				<h4>我要儲值</h4>
 			</li>
 			<li>
 				<h4 style="margin-bottom: 15px;">儲值金額</h4>
-				<el-radio-group v-model="amountVal" @change="amountChange">
+				<el-radio-group v-model="amountVal" @change="amountChange" img src="../assets/money/game(3).png">
 					<el-radio border :label="''+ 100">鑽石100</el-radio>
 					<el-radio border :label="''+ 500">鑽石500</el-radio>
 					<el-radio border :label="''+ 1000">鑽石1000</el-radio>
@@ -123,9 +122,19 @@
 </script>
  
 <style scoped>
-	.msg-box > li {
-		list-style: none;
-		border-bottom: 1px solid #c5c5c5;
-		padding: 20px 10px;
-	}
+.msg-box > li{
+	list-style: none;
+	border-bottom: 1px solid #c5c5c5;
+	padding: 20px 10px;
+}
+.box-card{
+  font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+	
 </style>
