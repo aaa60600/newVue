@@ -188,7 +188,14 @@ methods: {
 }
 .msg-box{
   position: absolute;
+<<<<<<< HEAD
     margin: 0px -50px -45px 0px;
     transform: translate3d(-25px, 45px, 0px);
 }
 </style>
+=======
+    margin: 0px -50px -15px 0px;
+    transform: translate3d(-25px, 45px, 0px);
+}
+</style>
+>>>>>>> 2bdad57572f8266265dc8093b6cd0aca2b899020
