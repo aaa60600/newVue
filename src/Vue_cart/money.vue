@@ -190,8 +190,4 @@ methods: {
     margin: 0px -50px -15px 0px;
     transform: translate3d(-25px, 45px, 0px);
 }
-<<<<<<< HEAD
 </style>
-=======
-</style>
->>>>>>> 5cb8a074605f34131e9e08f16955db401d7eaf8a
