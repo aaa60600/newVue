@@ -64,7 +64,7 @@ export default {
           number:'C',
           imgUrl:require('../assets/role/monsters2(80).png'),
         },
-     
+
         {
           name:'superHero',
           number:'D',
@@ -103,15 +103,17 @@ export default {
     transform:scale(1.1);
   }
   .panel{
-    width: 70%;
+    position: absolute;
+    margin: 0px -50px -15px 0px;
+    transform: translate3d(0px, 0px, 0px);
   }
   .flexbox{
-  font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90vw;
-  height: 90vh;
+    font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
 }
 </style>
