@@ -157,9 +157,7 @@ methods: {
 					sessionStorage.amt = orderParams.amt;
 					sessionStorage.returnUrl = orderParams.returnUrl;
 					sessionStorage.order_id = orderParams.order_id;
-					this.$router.push({
-					name: 'wechatPay'
-					})
+					this.$router.push("/finishPay")
 				}
 			}
 	}
