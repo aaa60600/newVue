@@ -93,7 +93,7 @@ export default {
     width: 100px;
     border: 1px solid cadetblue;
     padding: 10px;
-    margin: 5px;
+    margin: 18px;
     display: inline-block;
     /* transition:All 0.5s ease; */
     cursor: pointer;
@@ -105,7 +105,7 @@ export default {
   .panel{
     position: absolute;
     margin: 0px -50px -15px 0px;
-    transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 40px, 0px);
   }
   .flexbox{
     font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
